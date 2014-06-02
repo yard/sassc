@@ -7,7 +7,9 @@ require 'rake/extensiontask'
 Gem::PackageTask.new($gemspec) do |pkg|
 end
 
-Rake::ExtensionTask.new('libsass', $gemspec)
+Rake::ExtensionTask.new('libsass', $gemspec) do |ext|
+  ext.lib_dir = "lib/sassc"
+end
 
 task :run => :compile do
   require File.expand_path('../lib/sassc', __FILE__)
