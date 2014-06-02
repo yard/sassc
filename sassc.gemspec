@@ -13,7 +13,7 @@ $gemspec = Gem::Specification.new do |gem|
   gem.executables   = []
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   
-  gem.platform = Gem::Platform::RUBY
+  gem.platform      = Gem::Platform::RUBY
   gem.extensions    = ["ext/libsass/extconf.rb"]
   gem.require_paths = ["lib", "exts"]
   gem.version       = "0.1"

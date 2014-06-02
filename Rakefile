@@ -8,7 +8,7 @@ Gem::PackageTask.new($gemspec) do |pkg|
 end
 
 Rake::ExtensionTask.new('libsass', $gemspec) do |ext|
-  ext.lib_dir = "lib/sassc"
+  ext.lib_dir = "lib"
 end
 
 task :run => :compile do
