@@ -1,4 +1,5 @@
 require 'ffi'
+require 'rbconfig'
 
 require_relative 'lib/context'
 require_relative 'lib/context'
@@ -12,7 +13,7 @@ module SassC
   module Lib
     extend FFI::Library
 
-    ffi_lib File.join(File.dirname(__FILE__), 'libsass.bundle')
+    ffi_lib File.join(File.dirname(__FILE__), "libsass.#{ RbConfig::CONFIG['DLEXT'] }")
 
     attach_function :sass_new_context,          [], :pointer
     attach_function :sass_new_file_context,     [], :pointer
