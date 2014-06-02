@@ -10,13 +10,13 @@ $gemspec = Gem::Specification.new do |gem|
   gem.homepage      = "http://github.com/hcatlin/sassruby"
 
   gem.files         = Dir["*", "ext/**/*", "lib/sassc.rb", "lib/sassc/*", "lib/sassc/**/*"]
-  gem.executables   = []#gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.executables   = []
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   
   gem.platform = Gem::Platform::RUBY
   gem.extensions    = ["ext/libsass/extconf.rb"]
   gem.require_paths = ["lib", "exts"]
-  gem.version       = "0.1"#SassC::VERSION
+  gem.version       = "0.1"
   
   gem.add_dependency('ffi')
   gem.add_dependency('rake-compiler')
