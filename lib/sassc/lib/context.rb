@@ -67,7 +67,7 @@ module SassC::Lib
     #  The functions are supposed to be Ruby blocks, received 1 argument and returning 1 result.
     #
     def set_custom_functions(input_funcs)
-      funcs_ptr = FFI::MemoryPointer.new(SassC::Lib::SassCFunctionDescriptor, input_funcs.count)
+      funcs_ptr = FFI::MemoryPointer.new(SassC::Lib::SassCFunctionDescriptor, input_funcs.count + 1)
 
       input_funcs.each.with_index do |(signature, block), i|
         fn = SassC::Lib::SassCFunctionDescriptor.new(funcs_ptr + i * SassC::Lib::SassCFunctionDescriptor.size)
