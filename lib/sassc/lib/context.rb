@@ -57,6 +57,7 @@ module SassC::Lib
         ctx[:source_string]   = FFI::MemoryPointer.from_string( input_string )
         ctx[:options]         = SassC::Lib::SassOptions.create( sass_options )
         ctx[:num_c_functions] = 0
+        ctx[:c_functions]     = nil
 
         return ctx
       end
